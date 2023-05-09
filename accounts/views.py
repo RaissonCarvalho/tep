@@ -28,5 +28,5 @@ class InvestorFormView(FormView):
             user=user,
         )
 
-        return super().form_invalid(form)
+        return super().form_valid(form)
   

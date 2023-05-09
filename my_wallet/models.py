@@ -29,8 +29,8 @@ class Transaction(models.Model):
 
     def get_total_trading_amount(self):
         if self.operation_type == 'Compra':
-            total_value = (self.quantity * self.unit_price) + (self.brokerage+0.005)
+            total_value = (self.quantity * self.unit_price) + (self.brokerage+0.003)
             return total_value
         if self.operation_type == 'Venda':
-            total_value = (self.quantity * self.unit_price) - (self.brokerage+0.005)
-            return round(total_value, 2)
+            total_value = (self.quantity * self.unit_price) - (self.brokerage+0.003)
+            return round(abs(total_value), 2)
